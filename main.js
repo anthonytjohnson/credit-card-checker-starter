@@ -24,7 +24,27 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-
+const validateCred = (array) => {
+  const oddArray = [];
+  const evenArray = [];
+  for(let i=array.length-1; i >= 0; i--) {
+    if((array.length-i) % 2 === 0) {
+      evenArray.unshift(array[i]); 
+    }
+    if((array.length-i) % 2 === 1) {
+      oddArray.unshift(array[i]);
+    } 
+  }
+  const evenArray2 = evenArray.map(el => {
+    if(el * 2 > 9) {
+      return (el * 2) - 9;
+    } else {
+      return el * 2;
+    }
+  })
+ const test = oddArray.reduce(( a, b ) => a + b,0) + evenArray2.reduce(( a, b ) => a + b,0)
+ return test % 10 === 0;
+}
 
 
 
