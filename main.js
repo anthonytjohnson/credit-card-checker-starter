@@ -56,6 +56,37 @@ const findInvalidCards = (array) => {
   return result;
 }
 
+const idInvalidCardCompanies = (array) => {
+  const result = []
+  for(const el of array) {
+    switch (el[0]) {
+      case 3:
+        if(result.indexOf('Amex') === -1) {
+          result.push('Amex');
+        }
+        break;
+      case 4:
+        if(result.indexOf('Visa') === -1) {
+          result.push('Visa');
+        }
+        break;
+      case 5:
+        if(result.indexOf('Mastercard') === -1) {
+          result.push('Mastercard');
+        }
+        break;
+      case 6:
+        if(result.indexOf('Discover') === -1) {
+          result.push('Discover');
+        }
+        break;
+      default:
+        console.log('company not found')                          
+    }
+  }
+  return result;
+}
+
 
 
 
