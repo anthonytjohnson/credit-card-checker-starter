@@ -46,6 +46,16 @@ const validateCred = (array) => {
  return test % 10 === 0;
 }
 
+const findInvalidCards = (array) => {
+  const result = [];
+  for(const el of array) {
+    if(validateCred(el) === false) {
+      result.push(el);
+    }
+  }
+  return result;
+}
+
 
 
 
